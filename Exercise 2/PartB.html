@@ -5,21 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Front End Dev Gym - Premium Gym Equipment</title>
   <style>
-    /* Remove default margins and padding */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    /* Set font and background for entire page */
     body {
       font-family: Arial, sans-serif;
       background-color: #1a1a1a;
       padding: 40px 20px;
     }
 
-    /* Main title styling - REQUIREMENT: Page should have a title */
     h1 {
       text-align: center;
       color: #ff6b35;
@@ -29,7 +26,6 @@
       letter-spacing: 2px;
     }
 
-    /* Subtitle */
     .subtitle {
       text-align: center;
       color: #cccccc;
@@ -37,7 +33,6 @@
       margin-bottom: 50px;
     }
 
-    /* REQUIREMENT: Gallery using Flexbox for responsive layout */
     .gallery {
       display: flex;
       flex-wrap: wrap;
@@ -47,7 +42,6 @@
       justify-content: center;
     }
 
-    /* REQUIREMENT: Product card as independent component */
     .product-card {
       background-color: #2d2d2d;
       width: 320px;
@@ -57,13 +51,11 @@
       transition: transform 0.3s ease;
     }
 
-    /* Card lifts on hover */
     .product-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 12px 24px rgba(255, 107, 53, 0.3);
     }
 
-    /* REQUIREMENT: Image with rounded corner and box-shadow */
     .product-card img {
       width: 100%;
       height: 220px;
@@ -72,12 +64,10 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
-    /* Card content padding */
     .card-content {
       padding: 25px;
     }
 
-    /* REQUIREMENT: Title */
     .product-card h2 {
       color: #ff6b35;
       font-size: 1.6em;
@@ -85,7 +75,6 @@
       font-weight: bold;
     }
 
-    /* REQUIREMENT: Brief description */
     .product-card p {
       color: #b0b0b0;
       font-size: 0.95em;
@@ -94,7 +83,6 @@
       min-height: 60px;
     }
 
-    /* REQUIREMENT: Price */
     .price {
       color: #4ecdc4;
       font-size: 2em;
@@ -103,7 +91,6 @@
       display: block;
     }
 
-    /* REQUIREMENT: Call-to-action button with :hover and :active */
     .btn {
       background-color: #ff6b35;
       color: white;
@@ -119,22 +106,18 @@
       transition: all 0.3s ease;
     }
 
-    /* REQUIREMENT: :hover pseudo-class for dynamic effect */
     .btn:hover {
       background-color: #e55a2b;
       transform: translateY(-3px);
       box-shadow: 0 6px 12px rgba(255, 107, 53, 0.4);
     }
 
-    /* REQUIREMENT: :active pseudo-class for interactive effect */
     .btn:active {
       background-color: #cc4d24;
       transform: translateY(0);
       box-shadow: 0 2px 6px rgba(255, 107, 53, 0.3);
     }
 
-    /* REQUIREMENT: Responsive layout - changes columns based on screen size */
-    /* On tablets and smaller laptops - 2 columns */
     @media (max-width: 1024px) {
       .gallery {
         gap: 25px;
@@ -146,7 +129,6 @@
       }
     }
 
-    /* On tablets - 2 columns but centered */
     @media (max-width: 768px) {
       h1 {
         font-size: 2.5em;
@@ -162,7 +144,6 @@
       }
     }
 
-    /* On mobile phones - 1 column */
     @media (max-width: 480px) {
       body {
         padding: 20px 10px;
@@ -193,30 +174,21 @@
   </style>
 </head>
 <body>
-  <!-- REQUIREMENT: Page title -->
   <h1>Front End Dev Gym</h1>
   <p class="subtitle">Premium Gym Equipment for Champions</p>
 
-  <!-- REQUIREMENT: Gallery with at least 3 product cards -->
   <div class="gallery">
     
-    <!-- Product Card 1 -->
     <div class="product-card">
-      <!-- REQUIREMENT: Image with rounded corner and box-shadow -->
       <img src="Images/AdjustableDumbbell.jpg" alt="Adjustable Dumbbells">
       <div class="card-content">
-        <!-- REQUIREMENT: Title -->
         <h2>Adjustable Dumbbells</h2>
-        <!-- REQUIREMENT: Brief description -->
         <p>Professional-grade adjustable dumbbells ranging from 5-52.5 lbs. Space-saving design with quick-adjust mechanism.</p>
-        <!-- REQUIREMENT: Price -->
         <span class="price">$349.99</span>
-        <!-- REQUIREMENT: Call-to-action button with :hover and :active -->
         <button class="btn">Add to Cart</button>
       </div>
     </div>
 
-    <!-- Product Card 2 -->
     <div class="product-card">
       <img src="Images/ResistanceBand.jpg" alt="Resistance Bands">
       <div class="card-content">
@@ -227,7 +199,6 @@
       </div>
     </div>
 
-    <!-- Product Card 3 -->
     <div class="product-card">
       <img src="Images/YogaMatt.jpg" alt="Yoga Mat">
       <div class="card-content">
@@ -238,7 +209,6 @@
       </div>
     </div>
 
-    <!-- Product Card 4 -->
     <div class="product-card">
       <img src="Images/KettleBell.jpg" alt="Kettlebell">
       <div class="card-content">
@@ -249,7 +219,6 @@
       </div>
     </div>
 
-    <!-- Product Card 5 -->
     <div class="product-card">
       <img src="Images/WorkoutGloves.jpg" alt="Gym Gloves">
       <div class="card-content">
@@ -260,7 +229,6 @@
       </div>
     </div>
 
-    <!-- Product Card 6 -->
     <div class="product-card">
       <img src="Images/JumpRope.jpg" alt="Jump Rope">
       <div class="card-content">
