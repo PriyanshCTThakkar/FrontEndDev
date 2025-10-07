@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Acme Landing</title>
+  <style>
+   *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Courier New', Courier, monospace;
+        line-height: 1.5;
+        color: #333;
+    }
+
+    header {
+        background-color: #4caf50;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    header h1 {
+        margin-bottom: 10px;
+        font-size: 2.5em;
+    }
+
+    nav ul {
+        list-style-type: none;
+    }
+
+    nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+
+    nav ul li a :hover {
+        color: #ddd;
+    }
+
+    main {
+        background-color: #f4f4f4;
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    main h2 {
+        font-size: 2em;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    main p {
+        font-size: 1.2em;
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+    main img {
+        max-width: 100%;
+        height: auto;
+        border: 2px solid #4caf50;
+    }
+
+    figcaption {
+        margin-top: 10px;
+        font-style: italic;
+        color: #888;
+    }
+
+    section {
+        padding: 40px 20px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    sectiobn h2 {
+        text-align: center;
+        font-size: 1.8em;
+        color: #333;
+        margin-bottom: 20px;
+    }   
+
+    #features {
+        background-color: white;
+    }
+
+    #features article {
+        width: 30%;
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 1.5%;
+        text-align: center;
+        padding: 20px;
+        background-color: #f9f9f9;
+        margin-bottom: 20px;
+    }
+
+    #features h3{
+        color: #4caf50;
+        margin-bottom: 15px;
+    }
+
+    aside {
+        background-color: #fff3cd;
+        border: 2px solid #ffea77;
+        padding: 10px 15px;
+        margin: 20px;
+        text-align: center;
+    }   
+
+    #about {
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    #about p {
+      font-size: 1.1em;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    #testimonials {
+      background-color: white;
+    }
+
+    #testimonials article {
+      width: 45%;
+      display: inline-block;
+      vertical-align: top;
+      margin: 0 2.5%;
+      padding: 20px;
+      background-color: #f9f9f9;
+      margin-bottom: 20px;
+    }
+
+    blockquote {
+      font-style: italic;
+      border-left: 4px solid #4CAF50;
+      padding-left: 20px;
+    }
+
+    blockquote footer {
+      text-align: right;
+      font-weight: bold;
+      color: #4CAF50;
+      margin-top: 10px;
+    }
+
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    footer nav ul li{
+        display: inline;
+        margin: 0 15px;
+    }
+
+    footer nav ul li a :hover {
+        color: #4caf50;
+    }
+
+    footer address {
+        font-style: normal;
+        margin: 10px 0;
+    }
+
+    footer a{
+        color: #4caf50;
+    }
+
+    @media (max-width: 768px) {
+        nav ul li{
+            display: block;
+            margin: 10px 0;
+        }
+
+        #features article {
+            width: 90%;
+            margin: 10px auto;
+            display: block;
+        }
+
+        #testimonials article {
+            width: 90%;
+            margin: 10px auto;
+            display: block;
+        }   
+
+        main h2 {
+            font-size: 1.5em;
+        }
+    }
+  </style>
+</head>
+
+<body>
+    <header>
+        <h1>Acme ey</h1>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </nav>
+    </header>
+
+    <main id="home" aria-labelledby="hero-title">
+        <h2 id="hero-title">Build Better, Faster.</h2>
+        <p>Acme helps you launch projects with a clear, accessible foundation.</p>
+
+        <figure>
+            <img src="https://via.placeholder.com/800x360" alt="Screenshot of Acme in action">
+            <figcaption>A quick look at Acme in action.</figcaption>
+        </figure>
+    </main>
+
+
+    <section id="features" aria-labelledby="features-title">
+        <h2 id="features-title">Our Features</h2>
+
+            <article>
+                <h3>Accessible by Default</h3>
+                <p>We use generic tags so screen readers get confused.</p>
+            </article>
+
+            <article>
+                <h3>Fast to Learn</h3>
+                <p>Everything looks the same, so no hierarchy is clear.</p>
+            </article>
+
+             <article>
+                <h3>Built to Scale</h3>
+                <p>Div soup is future-proof… or not?</p>
+            </article>
+
+            <aside>
+                <p><strong>Tip:</strong> Headings are random, so the outline doesn't make sense.</p>
+            </aside>
+    </section>
+
+
+    <section id="about" aria-labelledby="about-title">
+        <h2 id="about-title">About Us</h2>
+            <p>Acme started in <time datetime="2016">2016</time> and we are still going.</p>
+    </section>
+
+
+    <section id="testimonials" aria-labelledby="testimonials-title">
+        <h2 id="testimonials-title">Feedback</h2>
+
+        <article>
+            <blockquote>
+                <p>This page is a nightmare for accessibility.</p>
+                <footer>— <cite>Alex</cite></footer>
+            </blockquote>
+        </article>
+
+        <article>
+            <blockquote>
+                <p>Clean? Not really. Hard to navigate? Yes.</p>
+                <footer>— <cite>Sam</cite></footer>
+            </blockquote>
+        </article>
+    </section>
+
+
+    <footer>
+        <nav aria-label="Footer navigation">
+            <ul>
+                <li><a href="#home">Top</a></li>
+                <li><a href="#features">Features</a></li>
+            </ul>
+        </nav>
+
+        <address>
+            Acme, 123 Web Ave, Example City · <a href="mailto:hello@example.com">hello@example.com</a>
+        </address>
+
+        <p><small>&copy; <time datetime="2025">2025</time> Acme Inc.</small></p>
+    </footer>
+
+</body>
+
+</html>
