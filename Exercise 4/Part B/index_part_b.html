@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Part B: Workflow Tracker</title>
+    <link rel="stylesheet" href="styles_b.css"> 
+</head>
+<body>
+
+    <main id="content_of_primary_page">
+        
+        <section id="workflow_sec" style="padding-top: 2rem;">
+            <h2>Exercise B: Workflow Tracker Interface</h2>
+            <workflow-tracker-interface></workflow-tracker-interface>
+        </section>
+
+    </main>
+
+    <script type="module" src="./workflow-tracker.js"></script>
+
+    <script>
+        document.querySelector('workflow-tracker-interface').addEventListener('workflowStateUpdated', (event) => {
+            console.log('Workflow Status Update: Total steps:', event.detail.currentSteps.length);
+            if (event.detail.currentSteps.length === 5) {
+                console.log("Goal Reached! 5 tasks completed.");
+            }
+        });
+    </script>
+
+</body>
+</html>

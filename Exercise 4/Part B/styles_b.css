@@ -1,0 +1,57 @@
+*, *::before, *::after {
+    box-sizing: border-box; 
+}
+
+body {
+    margin: 0;
+    padding: 2.5rem; 
+    font-family: 'Arial', sans-serif;
+    background-color: #FAF9F6;
+    color: #4A4A4A;
+    line-height: 1.6;
+}
+
+#content_of_primary_page {
+    max-width: 900px;
+    margin: 0 auto; 
+    padding: 0 10px; 
+}
+
+#workflow_sec {
+    background-color: #FFFFFF; 
+    border: 1px solid #E0E0E0;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: 10px; 
+    box-shadow: 0 12px 30px rgba(74, 74, 74, 0.08), 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s ease; 
+}
+
+h2 {
+    color: #5D5C4A;
+    padding-bottom: 0.7rem;
+    margin-top: 0;
+    margin-bottom: 1.8rem;
+    font-weight: 700; 
+    text-align: center; 
+    border-bottom: 2px solid #F0F0E6;
+}
+
+workflow-tracker-interface {
+    display: block;
+}
+
+input[type="text"] {
+    flex-grow: 1; 
+    padding: 0.75rem;
+    border: 2px solid #C8C8B5;
+    border-radius: 6px;
+    height: 48px; 
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #8B7A60;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(139, 122, 96, 0.2); 
+}

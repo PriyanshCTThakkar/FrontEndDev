@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Part A: Product Card</title>
+    <link rel="stylesheet" href="styles_a.css"> 
+</head>
+<body>
+
+    <main id="content_of_primary_page">
+        
+        <template id="catalogue-item-blueprint">
+            <style>
+                :host {
+                    display: block; 
+                    border: 3px double #8e44ad;
+                    padding: 1rem;
+                    max-width: 400px;
+                    margin: 2rem auto;
+                    font-family: 'Georgia', serif;
+                }
+                ::slotted(figure) { 
+                    text-align: center;
+                    margin: 0 0 1rem 0;
+                }
+                ::slotted(img) {
+                    width: 90%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                }
+                .purchase-action-button {
+                    background-color: #2980b9;
+                    color: white;
+                    border: none;
+                    padding: 0.75rem;
+                    cursor: pointer;
+                    width: 100%;
+                }
+                .pricing-footer {
+                    margin-top: 1rem;
+                    padding-top: 1rem;
+                    border-top: 1px solid #ccc;
+                }
+            </style>
+          
+            <article class="product-wrapper">
+                <section class="media-section">
+                    <slot name="media-container"></slot>
+                </section>
+                
+                <header>
+                    <h3 id="item-label-display">Placeholder Product Name</h3>
+                </header>
+
+                <section class="description-section">
+                    <slot name="item-description-text"></slot>
+                </section>
+
+                <footer class="pricing-footer">
+                    <p id="cost-value-output" style="font-size: 1.5em; color: #d35400;">$0.00</p>
+                    <button id="commit-order-button" class="purchase-action-button">
+                        Confirm Order
+                    </button>
+                </footer>
+            </article>
+        </template>
+        
+        <section id="item_showcase_sec" style="padding-top: 2rem;">
+            <h2>Exercise A: Product Card Showcase</h2>
+            <catalogue-item-presenter 
+                item-label="Advanced Quantum Coil" 
+                unit-cost="1999.99">
+                
+                <figure slot="media-container">
+                    <img src="coil-image.jpg" alt="Quantum Coil">
+                    <figcaption>Precision-wound for maximum efficiency.</figcaption>
+                </figure>
+                <p slot="item-description-text">
+                    A critical component for hyper-dimensional energy storage systems. (Exclusive item).
+                </p>
+            </catalogue-item-presenter>
+        </section>
+
+    </main>
+
+    <script type="module" src="./item-presenter.js"></script>
+
+    <script>
+        document.addEventListener('itemPurchaseInitiated', (event) => {
+            console.log('External Transaction Log:', event.detail);
+            alert(`Purchase initiated for ${event.detail.productName} at $${event.detail.price}. Check console.`);
+        });
+    </script>
+
+</body>
+</html>
