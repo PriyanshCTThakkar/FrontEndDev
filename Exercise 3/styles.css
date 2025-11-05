@@ -1,0 +1,150 @@
+*, *::before, *::after {
+    box-sizing: border-box; 
+}
+
+body {
+    margin: 0;
+    padding: 2.5rem; 
+    font-family: 'Arial', sans-serif;
+    background-color: #F8F4FF; 
+    color: #333333; 
+    line-height: 1.6;
+}
+
+#content_of_primary_page {
+    max-width: 800px; 
+    margin: 0 auto; 
+    padding: 0 10px; 
+}
+
+#task_manager_sec, 
+#async_data_display_unit {
+    background-color: #FFFFFF; 
+    border: none; 
+    padding: 2rem; 
+    margin-bottom: 2rem;
+    border-radius: 12px; 
+    box-shadow: 0 10px 25px rgba(106, 13, 173, 0.15), 0 3px 6px rgba(0, 0, 0, 0.08); 
+    transition: box-shadow 0.3s ease; 
+}
+
+h2, h3, h4, h5 {
+    color: #4B0082; 
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-weight: 700; 
+    text-align: center; 
+    border-bottom: 3px solid #E6E6FA; 
+}
+
+#task_submission_form {
+    display: flex; 
+    gap: 1rem; 
+    margin-bottom: 1.5rem;
+    align-items: center; 
+}
+
+#task_input_field {
+    flex-grow: 1; 
+    padding: 0.75rem;
+    border: 2px solid #D8BFD8;
+    border-radius: 6px;
+    height: 48px; 
+    transition: border-color 0.3s;
+}
+
+#task_input_field:focus {
+    border-color: #8A2BE2; 
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.2); 
+}
+
+#add_task_button {
+    background: linear-gradient(145deg, #9955FF, #8A2BE2);
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer; 
+    height: 48px;
+    box-shadow: 0 8px 15px rgba(138, 43, 226, 0.3);
+    transition: all 0.3s ease;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+#add_task_button:hover {
+    background: linear-gradient(145deg, #7A19B5, #6A0DAD);
+    transform: translateY(-2px); 
+    box-shadow: 0 12px 20px rgba(106, 13, 173, 0.5);
+}
+
+#add_task_button:active {
+    background-color: #4B0082; 
+    transform: translateY(1px); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+#currently_active_task_list_container,
+#user_posts_data_section ul {
+    list-style: none;
+    padding: 0;
+}
+
+#currently_active_task_list_container li {
+    background-color: #F0F0FF; 
+    margin-bottom: 0.75rem;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    font-size: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.task_removal_button_hook {
+    background-color: #D8BFD8; 
+    color: #4B0082; 
+    border: 1px solid #9955FF; 
+    padding: 0.4rem 0.6rem;
+    border-radius: 4px;
+    cursor: pointer; 
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.task_removal_button_hook:hover {
+    background-color: #6A0DAD; 
+    color: white;
+    transform: scale(1.05); 
+}
+
+#user_profile_section p {
+    padding-left: 1.5rem; 
+    margin-bottom: 0.5rem;
+}
+
+#user_profile_section strong {
+    color: #6A0DAD; 
+    font-weight: 700;
+    margin-right: 8px;
+    display: inline-block;
+    width: 60px; 
+    text-align: right;
+}
+
+#user_posts_data_section ul li {
+    padding-left: 1.5rem; 
+    margin-bottom: 0.2rem;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    justify-content: flex-start;
+    font-size: 0.95rem;
+    color: #4B0082; 
+    list-style-type: "→ "; 
+}
