@@ -1,0 +1,600 @@
+/**
+ * StatsPage - Match Statistics & League Table Styles
+ *
+ * Professional statistics dashboard with match ticker and standings table
+ */
+
+@import '../../styles/theme.css';
+
+/* ========================================
+   MAIN LAYOUT
+   ======================================== */
+
+.stats-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  padding: 2rem;
+  color: #fff;
+}
+
+/* ========================================
+   PAGE HEADER
+   ======================================== */
+
+.stats-header {
+  max-width: 1400px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stats-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(90deg, #ffd700, #ffed4e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.stats-subtitle {
+  font-size: 1.5rem;
+  color: #d0d0d0;
+  margin: 0;
+}
+
+/* ========================================
+   LOADING STATE
+   ======================================== */
+
+.loading-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #ffd700;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  font-size: 1.25rem;
+  color: #a0a0a0;
+  margin: 0;
+}
+
+/* ========================================
+   ERROR STATE
+   ======================================== */
+
+.error-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 2px solid rgba(239, 68, 68, 0.3);
+  border-radius: 16px;
+}
+
+.error-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.error-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ef4444;
+  margin: 0 0 0.5rem 0;
+}
+
+.error-message {
+  font-size: 1.1rem;
+  color: #d0d0d0;
+  margin: 0;
+}
+
+/* ========================================
+   SECTION STYLING
+   ======================================== */
+
+.latest-matches-section,
+.record-match-section,
+.league-table-section {
+  max-width: 1400px;
+  margin: 0 auto 3rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+  background: linear-gradient(90deg, #4a90e2, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   EMPTY STATE
+   ======================================== */
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+}
+
+.empty-icon {
+  font-size: 4rem;
+  display: block;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #d0d0d0;
+  margin: 0 0 0.5rem 0;
+}
+
+.empty-hint {
+  font-size: 1.1rem;
+  color: #888;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ========================================
+   MATCHES TICKER
+   ======================================== */
+
+.matches-ticker {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.match-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.match-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(74, 144, 226, 0.5);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.match-date {
+  font-size: 0.875rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-weight: 600;
+}
+
+.match-result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.team-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.home-team {
+  align-items: flex-start;
+}
+
+.away-team {
+  align-items: flex-end;
+}
+
+.team-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.team-score {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffd700;
+}
+
+.vs-separator {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #888;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.match-venue {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #888;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.venue-icon {
+  font-size: 1rem;
+}
+
+/* ========================================
+   RECORD MATCH SECTION
+   ======================================== */
+
+.record-match-section {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.record-match-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 3rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #4a90e2, #8a2be2);
+  border: none;
+  border-radius: 16px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
+  position: relative;
+  overflow: hidden;
+  font-family: inherit;
+}
+
+.record-match-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #8a2be2, #4a90e2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.record-match-btn:hover::before {
+  opacity: 1;
+}
+
+.record-match-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(74, 144, 226, 0.5);
+}
+
+.record-match-btn > * {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-icon {
+  font-size: 1.5rem;
+}
+
+.btn-text {
+  flex: 1;
+}
+
+.btn-arrow {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.record-match-btn:hover .btn-arrow {
+  transform: translateX(8px);
+}
+
+.record-hint {
+  font-size: 1rem;
+  color: #888;
+  font-style: italic;
+  margin: 1rem 0 0 0;
+}
+
+/* ========================================
+   LEAGUE TABLE
+   ======================================== */
+
+.league-table-container {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.league-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.league-table thead {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.league-table th {
+  padding: 1.25rem 1rem;
+  text-align: left;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  color: #ffd700;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.league-table td {
+  padding: 1.25rem 1rem;
+  font-size: 1rem;
+  color: #e0e0e0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table-row {
+  transition: all 0.3s ease;
+}
+
+.table-row:hover {
+  background: rgba(74, 144, 226, 0.1);
+}
+
+.table-row.top-three {
+  background: rgba(255, 215, 0, 0.05);
+}
+
+.table-row.top-three:hover {
+  background: rgba(255, 215, 0, 0.1);
+}
+
+/* Column Sizing */
+.col-position {
+  width: 60px;
+  text-align: center;
+}
+
+.col-team {
+  min-width: 200px;
+}
+
+.col-house {
+  min-width: 120px;
+}
+
+.col-stat {
+  width: 80px;
+  text-align: center;
+}
+
+/* Position Badge */
+.position-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffd700;
+}
+
+.top-three .position-badge {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  border-color: transparent;
+  color: #1a1a2e;
+}
+
+/* Team Name */
+.team-name-cell {
+  font-weight: 600;
+  color: #fff;
+}
+
+/* House Badge */
+.house-badge {
+  display: inline-block;
+  padding: 0.375rem 0.875rem;
+  background: rgba(74, 144, 226, 0.2);
+  border: 1px solid rgba(74, 144, 226, 0.4);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4a90e2;
+}
+
+/* Stats Coloring */
+.wins-stat {
+  color: #4ade80;
+  font-weight: 700;
+}
+
+.draws-stat {
+  color: #fbbf24;
+  font-weight: 700;
+}
+
+.losses-stat {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.points-stat {
+  color: #ffd700;
+  font-weight: 800;
+  font-size: 1.125rem;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.stats-footer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-note {
+  font-size: 1rem;
+  color: #888;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .matches-ticker {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .league-table-container {
+    overflow-x: auto;
+  }
+
+  .league-table {
+    min-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-page {
+    padding: 1rem;
+  }
+
+  .stats-header {
+    padding: 1.5rem;
+  }
+
+  .stats-title {
+    font-size: 2rem;
+  }
+
+  .stats-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .matches-ticker {
+    grid-template-columns: 1fr;
+  }
+
+  .record-match-btn {
+    padding: 1.25rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .league-table th,
+  .league-table td {
+    padding: 1rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .col-team {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-title {
+    font-size: 1.75rem;
+  }
+
+  .stats-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .record-match-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .btn-icon,
+  .btn-arrow {
+    font-size: 1.25rem;
+  }
+
+  .league-table th,
+  .league-table td {
+    padding: 0.875rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .position-badge {
+    width: 32px;
+    height: 32px;
+    font-size: 0.875rem;
+  }
+
+  .team-score {
+    font-size: 1.75rem;
+  }
+}

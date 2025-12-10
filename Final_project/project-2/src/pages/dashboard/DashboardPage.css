@@ -1,0 +1,478 @@
+/**
+ * DashboardPage - Central Hub Styles
+ *
+ * Large interactive cards for League and Player management
+ */
+
+@import '../../styles/theme.css';
+
+/* ========================================
+   MAIN LAYOUT
+   ======================================== */
+
+.dashboard-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  padding: 2rem;
+  color: #fff;
+}
+
+/* ========================================
+   DASHBOARD HEADER
+   ======================================== */
+
+.dashboard-header {
+  max-width: 1400px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #ffd700, #ffed4e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dashboard-subtitle {
+  font-size: 1.5rem;
+  color: #d0d0d0;
+  margin-bottom: 0.5rem;
+}
+
+.wizard-name {
+  color: #4a90e2;
+  font-weight: 700;
+}
+
+.dashboard-description {
+  font-size: 1.1rem;
+  color: #a0a0a0;
+  font-style: italic;
+}
+
+/* ========================================
+   WIZARD STATS BAR
+   ======================================== */
+
+.wizard-stats-bar {
+  max-width: 1400px;
+  margin: 0 auto 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: #b0b0b0;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffd700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ========================================
+   QUICK ACTIONS SECTION
+   ======================================== */
+
+.quick-actions-section {
+  max-width: 1400px;
+  margin: 0 auto 2rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #4a90e2, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
+.section-description {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #a0a0a0;
+  margin-bottom: 3rem;
+  font-style: italic;
+}
+
+/* ========================================
+   ACTION CARDS GRID
+   ======================================== */
+
+.action-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* ========================================
+   ACTION CARD
+   ======================================== */
+
+.action-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.action-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.action-card:hover::before {
+  opacity: 1;
+}
+
+.action-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(74, 144, 226, 0.4);
+}
+
+/* Primary Card (League Management) */
+.action-card-primary {
+  border-color: #4a90e2;
+}
+
+.action-card-primary:hover {
+  background: rgba(74, 144, 226, 0.1);
+  border-color: #4a90e2;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(74, 144, 226, 0.6);
+}
+
+/* Secondary Card (Scouting Network) */
+.action-card-secondary {
+  border-color: #8a2be2;
+}
+
+.action-card-secondary:hover {
+  background: rgba(138, 43, 226, 0.1);
+  border-color: #8a2be2;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 0 40px rgba(138, 43, 226, 0.6);
+}
+
+/* ========================================
+   CARD ICON
+   ======================================== */
+
+.card-icon-container {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-icon {
+  font-size: 5rem;
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.icon-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.action-card:hover .card-icon {
+  transform: scale(1.2) rotate(5deg);
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+}
+
+.action-card:hover .icon-glow {
+  opacity: 1;
+}
+
+/* ========================================
+   CARD CONTENT
+   ======================================== */
+
+.card-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffd700;
+  margin: 0;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.action-card:hover .card-title {
+  transform: scale(1.05);
+}
+
+.card-description {
+  font-size: 1.1rem;
+  color: #c0c0c0;
+  text-align: center;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ========================================
+   CARD FEATURES
+   ======================================== */
+
+.card-features {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  color: #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.action-card:hover .feature-item {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(8px);
+}
+
+.feature-icon {
+  font-size: 1.25rem;
+  color: #4ade80;
+  font-weight: 700;
+}
+
+/* ========================================
+   CARD ACTION
+   ======================================== */
+
+.card-action {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, rgba(74, 144, 226, 0.2), rgba(138, 43, 226, 0.2));
+  border: 2px solid transparent;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffd700;
+  transition: all 0.3s ease;
+}
+
+.action-card-primary .card-action {
+  border-color: rgba(74, 144, 226, 0.5);
+}
+
+.action-card-secondary .card-action {
+  border-color: rgba(138, 43, 226, 0.5);
+}
+
+.action-card:hover .card-action {
+  background: linear-gradient(135deg, rgba(74, 144, 226, 0.4), rgba(138, 43, 226, 0.4));
+  transform: scale(1.05);
+}
+
+.action-text {
+  flex: 1;
+  text-align: center;
+}
+
+.action-arrow {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.action-card:hover .action-arrow {
+  transform: translateX(8px);
+}
+
+/* ========================================
+   DASHBOARD FOOTER
+   ======================================== */
+
+.dashboard-footer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-note {
+  font-size: 1rem;
+  color: #a0a0a0;
+  margin: 0;
+  font-style: italic;
+}
+
+.footer-note strong {
+  color: #4a90e2;
+  font-weight: 700;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .action-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-page {
+    padding: 1rem;
+  }
+
+  .dashboard-header {
+    padding: 1.5rem;
+  }
+
+  .dashboard-title {
+    font-size: 2rem;
+  }
+
+  .dashboard-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .wizard-stats-bar {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .action-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .card-icon-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .card-icon {
+    font-size: 4rem;
+  }
+
+  .card-title {
+    font-size: 1.75rem;
+  }
+
+  .card-description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-title {
+    font-size: 1.75rem;
+  }
+
+  .dashboard-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .action-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .card-icon-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .card-icon {
+    font-size: 3.5rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+}

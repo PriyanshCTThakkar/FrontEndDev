@@ -1,0 +1,424 @@
+/**
+ * RecruitmentForm Styles
+ * Ministry of Magic themed registration form
+ * Uses parchment styling with ink text
+ */
+
+@import '../../../styles/theme.css';
+
+/* ========================================
+   OVERLAY (Modal Background)
+   ======================================== */
+
+.recruitment-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  padding: var(--spacing-md);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   FORM CONTAINER
+   ======================================== */
+
+.recruitment-form-container {
+  background: var(--parchment-bg);
+  border: 3px solid var(--parchment-dark);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl), 0 0 40px rgba(138, 43, 226, 0.3);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Parchment texture effect */
+.recruitment-form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(90deg, transparent 79px, var(--parchment-dark) 79px, var(--parchment-dark) 81px, transparent 81px),
+    linear-gradient(var(--parchment-light) 0.1em, transparent 0.1em);
+  background-size: 100% 1.5em;
+  opacity: 0.2;
+  pointer-events: none;
+  border-radius: var(--radius-lg);
+  z-index: 0;
+}
+
+/* ========================================
+   FORM HEADER
+   ======================================== */
+
+.form-header {
+  padding: var(--spacing-2xl) var(--spacing-xl) var(--spacing-lg);
+  text-align: center;
+  border-bottom: 2px solid var(--parchment-dark);
+  position: relative;
+  z-index: 1;
+}
+
+.form-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-3xl);
+  color: var(--spell-damage-red);
+  margin-bottom: var(--spacing-sm);
+  font-weight: var(--font-weight-bold);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-subtitle {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  color: var(--ink-black);
+  margin-bottom: var(--spacing-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+.form-description {
+  font-size: var(--font-size-sm);
+  color: var(--ink-faded);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* ========================================
+   REGISTRATION FORM
+   ======================================== */
+
+.registration-form {
+  padding: var(--spacing-xl);
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   FORM FIELDS
+   ======================================== */
+
+.form-field {
+  margin-bottom: var(--spacing-lg);
+}
+
+.field-label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: #1a1a1a;
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-family-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.required {
+  color: var(--spell-damage-red);
+  margin-left: var(--spacing-xs);
+}
+
+.field-input,
+.field-select {
+  width: 100%;
+  padding: var(--spacing-md);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-mono);
+  color: #000000;
+  background: var(--parchment-light);
+  border: 2px solid var(--parchment-dark);
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.field-input:focus,
+.field-select:focus {
+  outline: none;
+  border-color: var(--spell-damage-red);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.1), inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.field-input:disabled,
+.field-select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background: var(--parchment-dark);
+}
+
+.field-input::placeholder {
+  color: var(--ink-light);
+  font-style: italic;
+}
+
+.field-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232c2c2c' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-md) center;
+  padding-right: var(--spacing-2xl);
+}
+
+.field-select option {
+  background: white;
+  color: #000000;
+  padding: var(--spacing-md);
+}
+
+/* Input Error State */
+.input-error {
+  border-color: #e74c3c;
+  background: #fff5f5;
+}
+
+.input-error:focus {
+  border-color: #e74c3c;
+  box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.field-error {
+  display: block;
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-sm);
+  color: #e74c3c;
+  font-weight: var(--font-weight-medium);
+}
+
+.field-hint {
+  display: block;
+  margin-top: var(--spacing-xs);
+  font-size: var(--font-size-xs);
+  color: var(--ink-faded);
+  font-style: italic;
+}
+
+/* ========================================
+   FORM ACTIONS
+   ======================================== */
+
+.form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-2xl);
+  padding-top: var(--spacing-lg);
+  border-top: 2px solid var(--parchment-dark);
+}
+
+.btn-cancel,
+.btn-submit {
+  flex: 1;
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-family-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+}
+
+.btn-cancel {
+  background: var(--parchment-dark);
+  color: var(--ink-black);
+  border: 2px solid var(--parchment-dark);
+}
+
+.btn-cancel:hover:not(:disabled) {
+  background: var(--parchment-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-cancel:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-submit {
+  background: linear-gradient(135deg, var(--spell-damage-red), var(--dark-magic-purple));
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.btn-submit:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--dark-magic-purple), var(--spell-damage-red));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-spell-cast);
+}
+
+.btn-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-cancel:disabled,
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Spinner Animation */
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================
+   MINISTRY SEAL
+   ======================================== */
+
+.ministry-seal {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  text-align: center;
+  border-top: 2px solid var(--parchment-dark);
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.03));
+  position: relative;
+  z-index: 1;
+}
+
+.seal-text {
+  font-size: var(--font-size-xs);
+  color: var(--ink-faded);
+  font-style: italic;
+  font-family: var(--font-family-heading);
+}
+
+.seal-text::before {
+  content: '⚡';
+  margin-right: var(--spacing-xs);
+  opacity: 0.5;
+}
+
+.seal-text::after {
+  content: '⚡';
+  margin-left: var(--spacing-xs);
+  opacity: 0.5;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .recruitment-form-overlay {
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .recruitment-form-container {
+    max-height: 100vh;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+
+  .form-header {
+    padding: var(--spacing-lg);
+  }
+
+  .form-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .form-subtitle {
+    font-size: var(--font-size-lg);
+  }
+
+  .registration-form {
+    padding: var(--spacing-md);
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn-cancel,
+  .btn-submit {
+    width: 100%;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.field-input:focus-visible,
+.field-select:focus-visible,
+.btn-cancel:focus-visible,
+.btn-submit:focus-visible {
+  outline: 3px solid var(--spell-damage-red);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .recruitment-form-container {
+    border-width: 4px;
+  }
+
+  .field-input,
+  .field-select {
+    border-width: 3px;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .recruitment-form-overlay,
+  .recruitment-form-container,
+  .field-input,
+  .field-select,
+  .btn-cancel,
+  .btn-submit {
+    animation: none;
+    transition: none;
+  }
+}

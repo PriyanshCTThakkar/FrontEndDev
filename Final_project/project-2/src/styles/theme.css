@@ -1,0 +1,247 @@
+/**
+ * Theme CSS Variables
+ *
+ * Centralized design tokens for the Wizarding World Quidditch Manager.
+ * Import this file in your components to access theme variables.
+ *
+ * Usage:
+ * ```css
+ * .my-component {
+ *   background: var(--parchment-bg);
+ *   color: var(--ink-black);
+ *   border: 2px solid var(--spell-damage-red);
+ * }
+ * ```
+ */
+
+:root {
+  /* ========================================
+     BRAND COLORS
+     ======================================== */
+
+  /* Spell & Magic Colors */
+  --spell-damage-red: #8a2be2;      /* Blueviolet - for destructive spells */
+  --spell-success-green: #2ecc71;   /* Emerald green - for successful spells */
+  --spell-warning-amber: #f39c12;   /* Amber - for warnings */
+
+  /* Parchment & Paper */
+  --parchment-bg: #f5f5dc;          /* Beige - classic parchment color */
+  --parchment-dark: #e8e8c8;        /* Darker parchment for borders */
+  --parchment-light: #fefef2;       /* Lighter parchment for highlights */
+
+  /* Ink & Text */
+  --ink-black: #2c2c2c;             /* Dark gray-black for text */
+  --ink-faded: #6a6a6a;             /* Faded ink for secondary text */
+  --ink-light: #9a9a9a;             /* Light gray for disabled text */
+
+  /* ========================================
+     HOGWARTS HOUSE COLORS
+     ======================================== */
+
+  --gryffindor-red: #740001;
+  --gryffindor-gold: #d3a625;
+
+  --slytherin-green: #1a472a;
+  --slytherin-silver: #aaaaaa;
+
+  --hufflepuff-yellow: #ecb939;
+  --hufflepuff-black: #000000;
+
+  --ravenclaw-blue: #0e1a40;
+  --ravenclaw-bronze: #946b2d;
+
+  /* ========================================
+     MAGICAL EFFECTS
+     ======================================== */
+
+  --wand-glow: #ffd700;             /* Golden glow */
+  --patronus-silver: #c0c0c0;       /* Silver patronus */
+  --dark-magic-purple: #4b0082;     /* Indigo - dark magic aura */
+  --potion-green: #39ff14;          /* Neon green - potion effect */
+
+  /* ========================================
+     UI ELEMENTS
+     ======================================== */
+
+  /* Backgrounds */
+  --bg-primary: #0f0c29;
+  --bg-secondary: #302b63;
+  --bg-tertiary: #24243e;
+
+  /* Surfaces */
+  --surface-elevated: rgba(255, 255, 255, 0.05);
+  --surface-hover: rgba(255, 255, 255, 0.08);
+  --surface-active: rgba(255, 255, 255, 0.12);
+
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-emphasis: rgba(255, 255, 255, 0.2);
+  --border-strong: rgba(255, 255, 255, 0.3);
+
+  /* Text on Dark Backgrounds */
+  --text-primary: #ffffff;
+  --text-secondary: #d0d0d0;
+  --text-tertiary: #b0b0b0;
+  --text-disabled: #808080;
+
+  /* ========================================
+     SPACING & SIZING
+     ======================================== */
+
+  --spacing-xs: 0.25rem;    /* 4px */
+  --spacing-sm: 0.5rem;     /* 8px */
+  --spacing-md: 1rem;       /* 16px */
+  --spacing-lg: 1.5rem;     /* 24px */
+  --spacing-xl: 2rem;       /* 32px */
+  --spacing-2xl: 3rem;      /* 48px */
+  --spacing-3xl: 4rem;      /* 64px */
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-full: 9999px;
+
+  /* ========================================
+     SHADOWS
+     ======================================== */
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.5);
+
+  /* Magical Shadows */
+  --shadow-wand-glow: 0 0 20px rgba(255, 215, 0, 0.5);
+  --shadow-spell-cast: 0 0 30px rgba(138, 43, 226, 0.6);
+  --shadow-dark-magic: 0 0 40px rgba(75, 0, 130, 0.7);
+
+  /* ========================================
+     TRANSITIONS & ANIMATIONS
+     ======================================== */
+
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 400ms ease-in-out;
+
+  --easing-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --easing-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1);
+  --easing-accelerate: cubic-bezier(0.4, 0.0, 1, 1);
+
+  /* ========================================
+     TYPOGRAPHY
+     ======================================== */
+
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-family-heading: 'Georgia', 'Times New Roman', serif;
+  --font-family-mono: 'Courier New', monospace;
+
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 2rem;      /* 32px */
+  --font-size-4xl: 2.5rem;    /* 40px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.25;
+  --line-height-base: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* ========================================
+     Z-INDEX LAYERS
+     ======================================== */
+
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-fixed: 1200;
+  --z-modal-backdrop: 1300;
+  --z-modal: 1400;
+  --z-popover: 1500;
+  --z-tooltip: 1600;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.text-ink-black {
+  color: var(--ink-black);
+}
+
+.text-ink-faded {
+  color: var(--ink-faded);
+}
+
+.bg-parchment {
+  background-color: var(--parchment-bg);
+}
+
+.bg-parchment-dark {
+  background-color: var(--parchment-dark);
+}
+
+.spell-damage-red {
+  color: var(--spell-damage-red);
+}
+
+.border-parchment {
+  border-color: var(--parchment-dark);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes spell-cast {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes wand-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px var(--wand-glow);
+  }
+  50% {
+    box-shadow: 0 0 30px var(--wand-glow);
+  }
+}
+
+@keyframes potion-bubble {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.spell-cast-animation {
+  animation: spell-cast 0.6s var(--easing-standard);
+}
+
+.wand-glow-animation {
+  animation: wand-glow 2s ease-in-out infinite;
+}
+
+.potion-bubble-animation {
+  animation: potion-bubble 1.5s ease-in-out infinite;
+}

@@ -1,0 +1,451 @@
+/**
+ * LeagueScroll Styles
+ *
+ * Parchment-themed styling using CSS variables from theme.css
+ * Container/Presentational pattern - component is purely UI
+ */
+
+@import '../../../styles/theme.css';
+
+/* ========================================
+   MAIN SCROLL CONTAINER
+   ======================================== */
+
+.league-scroll {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-xl);
+}
+
+/* ========================================
+   SCROLL HEADER
+   ======================================== */
+
+.scroll-header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  padding: var(--spacing-xl);
+  background: var(--parchment-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.scroll-header::before,
+.scroll-header::after {
+  content: '✨';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  opacity: 0.3;
+}
+
+.scroll-header::before {
+  left: var(--spacing-lg);
+}
+
+.scroll-header::after {
+  right: var(--spacing-lg);
+}
+
+.scroll-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-3xl);
+  color: var(--ink-black);
+  margin-bottom: var(--spacing-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.scroll-subtitle {
+  font-size: var(--font-size-base);
+  color: var(--ink-faded);
+  font-style: italic;
+  margin-bottom: var(--spacing-md);
+}
+
+.team-count-badge {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--spell-damage-red);
+  color: white;
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+  box-shadow: var(--shadow-spell-cast);
+}
+
+/* ========================================
+   LOADING POTION STATE
+   ======================================== */
+
+.loading-potion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-3xl);
+  background: var(--parchment-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.potion-bottle {
+  position: relative;
+  width: 80px;
+  height: 100px;
+  background: linear-gradient(180deg, transparent 20%, var(--potion-green) 20%);
+  border: 3px solid var(--ink-black);
+  border-radius: 10px 10px 20px 20px;
+  margin-bottom: var(--spacing-lg);
+  overflow: hidden;
+}
+
+.potion-bottle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 20px;
+  background: var(--ink-black);
+  border-radius: 5px 5px 0 0;
+}
+
+.potion-bubble {
+  position: absolute;
+  bottom: 30%;
+  width: 12px;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  animation: potion-bubble 2s ease-in-out infinite;
+}
+
+.potion-bubble:nth-child(1) {
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.potion-bubble:nth-child(2) {
+  left: 50%;
+  animation-delay: 0.7s;
+}
+
+.potion-bubble:nth-child(3) {
+  left: 70%;
+  animation-delay: 1.4s;
+}
+
+@keyframes potion-bubble {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-60px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.loading-text {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+  color: var(--ink-black);
+  font-style: italic;
+}
+
+/* ========================================
+   ERROR STATE
+   ======================================== */
+
+.error-parchment {
+  padding: var(--spacing-2xl);
+  background: var(--parchment-bg);
+  border: 3px solid var(--spell-damage-red);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-spell-cast);
+}
+
+.error-icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.error-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-2xl);
+  color: var(--spell-damage-red);
+  margin-bottom: var(--spacing-md);
+}
+
+.error-message {
+  font-size: var(--font-size-lg);
+  color: var(--ink-black);
+  margin-bottom: var(--spacing-md);
+}
+
+.error-hint {
+  font-size: var(--font-size-sm);
+  color: var(--ink-faded);
+  font-style: italic;
+}
+
+/* ========================================
+   EMPTY STATE
+   ======================================== */
+
+.empty-scroll {
+  padding: var(--spacing-3xl);
+  background: var(--parchment-bg);
+  border: 2px dashed var(--parchment-dark);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 5rem;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.5;
+}
+
+.empty-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-2xl);
+  color: var(--ink-black);
+  margin-bottom: var(--spacing-md);
+}
+
+.empty-message {
+  font-size: var(--font-size-base);
+  color: var(--ink-faded);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: var(--line-height-relaxed);
+}
+
+/* ========================================
+   TEAMS GRID
+   ======================================== */
+
+.teams-parchment {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+/* ========================================
+   TEAM CARD
+   ======================================== */
+
+.team-card {
+  background: var(--parchment-bg);
+  border: 2px solid var(--parchment-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Parchment texture effect */
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(90deg, transparent 79px, var(--parchment-dark) 79px, var(--parchment-dark) 81px, transparent 81px),
+    linear-gradient(var(--parchment-light) 0.1em, transparent 0.1em);
+  background-size: 100% 1.5em;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.team-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.team-card.clickable {
+  cursor: pointer;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--spell-damage-red);
+}
+
+/* ========================================
+   TEAM CARD HEADER
+   ======================================== */
+
+.team-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--parchment-dark);
+}
+
+.team-name-section {
+  flex: 1;
+}
+
+.team-name {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  color: var(--ink-black);
+  margin-bottom: var(--spacing-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+.house-badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: white;
+}
+
+.house-gryffindor {
+  background: var(--gryffindor-red);
+}
+
+.house-slytherin {
+  background: var(--slytherin-green);
+}
+
+.house-hufflepuff {
+  background: var(--hufflepuff-yellow);
+  color: var(--ink-black);
+}
+
+.house-ravenclaw {
+  background: var(--ravenclaw-blue);
+}
+
+.banish-button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--spell-damage-red);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.banish-button:hover {
+  background: var(--dark-magic-purple);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-spell-cast);
+}
+
+.banish-button:active {
+  transform: scale(0.98);
+}
+
+/* ========================================
+   TEAM STATS
+   ======================================== */
+
+.team-stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-xs) 0;
+}
+
+.stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--ink-faded);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-base);
+  color: var(--ink-black);
+  font-weight: var(--font-weight-semibold);
+}
+
+.stat-highlight {
+  color: var(--spell-damage-red);
+  font-weight: var(--font-weight-bold);
+}
+
+/* ========================================
+   TEAM LOGO
+   ======================================== */
+
+.team-logo-section {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--parchment-dark);
+  text-align: center;
+}
+
+.team-logo {
+  max-width: 80px;
+  max-height: 80px;
+  margin: 0 auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .league-scroll {
+    padding: var(--spacing-md);
+  }
+
+  .scroll-header {
+    padding: var(--spacing-lg);
+  }
+
+  .scroll-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .scroll-header::before,
+  .scroll-header::after {
+    display: none;
+  }
+
+  .teams-parchment {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .team-card-header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .banish-button {
+    width: 100%;
+  }
+}

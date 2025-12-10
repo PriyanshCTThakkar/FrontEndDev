@@ -1,0 +1,491 @@
+/**
+ * LandingPage - Daily Prophet Newspaper Theme
+ *
+ * Styled like a vintage magical newspaper with parchment aesthetic
+ */
+
+@import '../../styles/theme.css';
+
+.landing-page {
+  min-height: 100vh;
+  background: #f5f5dc; /* Parchment color */
+  background-image:
+    linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px),
+    linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  color: var(--ink-black);
+  padding: 2rem 1rem;
+}
+
+/* ========================================
+   DAILY PROPHET MASTHEAD
+   ======================================== */
+
+.prophet-masthead {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  background: linear-gradient(to bottom, #2c2c2c 0%, #1a1a1a 100%);
+  border: 4px double #ffd700;
+  border-radius: 4px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.masthead-ornament {
+  color: #ffd700;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  letter-spacing: 2rem;
+}
+
+.prophet-title {
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #ffd700;
+  letter-spacing: 0.5rem;
+  margin: 1rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+}
+
+.masthead-subtitle {
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  color: #d4af37;
+  font-style: italic;
+  letter-spacing: 0.1rem;
+}
+
+/* ========================================
+   MAIN HEADLINE SECTION
+   ======================================== */
+
+.headline-section {
+  max-width: 1200px;
+  margin: 0 auto 2rem;
+  padding: 2rem;
+  background: white;
+  border: 3px solid var(--ink-black);
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.headline-banner {
+  background: #e74c3c;
+  color: white;
+  padding: 0.5rem 2rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  margin: -2rem -2rem 1.5rem -2rem;
+  border-bottom: 3px solid var(--ink-black);
+}
+
+.main-headline {
+  font-family: 'Times New Roman', Georgia, serif;
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+  margin: 1rem 0;
+  color: var(--ink-black);
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.headline-subtext {
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+  text-align: center;
+  color: #555;
+  font-style: italic;
+  margin: 1rem 0;
+  line-height: 1.4;
+}
+
+.headline-dateline {
+  text-align: center;
+  font-size: 0.875rem;
+  color: #888;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #ddd;
+  font-family: Georgia, serif;
+}
+
+/* ========================================
+   MINISTRY ACCESS WIDGET
+   ======================================== */
+
+.ministry-widget {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  background: linear-gradient(135deg, #f5f5dc, #e8e8d0);
+  border: 3px solid #8a2be2;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(138, 43, 226, 0.3);
+}
+
+/* Authenticated State */
+.ministry-authenticated {
+  text-align: center;
+}
+
+.authenticated-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.auth-icon {
+  font-size: 2rem;
+}
+
+.authenticated-header h3 {
+  font-family: var(--font-family-heading);
+  font-size: 1.75rem;
+  color: #8a2be2;
+  margin: 0;
+}
+
+.wizard-info-card {
+  background: white;
+  border: 2px solid var(--parchment-dark);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #666;
+  font-size: 1rem;
+}
+
+.info-value {
+  font-weight: 700;
+  color: var(--ink-black);
+  font-size: 1.1rem;
+}
+
+.house-badge {
+  padding: 0.25rem 0.75rem;
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  color: white;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}
+
+/* Unauthenticated State */
+.ministry-unauthenticated {
+  text-align: center;
+}
+
+.ministry-seal {
+  margin-bottom: 2rem;
+}
+
+.seal-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.ministry-seal h3 {
+  font-family: var(--font-family-heading);
+  font-size: 1.75rem;
+  color: #8a2be2;
+  margin: 0.5rem 0;
+}
+
+.ministry-seal p {
+  font-size: 1.1rem;
+  color: #555;
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.ministry-hint {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px dashed #ddd;
+}
+
+.ministry-hint p {
+  font-size: 0.95rem;
+  color: #777;
+  font-style: italic;
+}
+
+/* Ministry Buttons */
+.ministry-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 0.5rem;
+}
+
+.ministry-button-primary {
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  color: white;
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
+}
+
+.ministry-button-primary:hover {
+  background: linear-gradient(135deg, #357abd, #4a90e2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.6);
+}
+
+.ministry-button-access {
+  background: linear-gradient(135deg, #8a2be2, #4b0082);
+  color: white;
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.4);
+}
+
+.ministry-button-access:hover {
+  background: linear-gradient(135deg, #4b0082, #8a2be2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
+}
+
+/* ========================================
+   NEWS ARTICLES SECTION
+   ======================================== */
+
+.news-articles-section {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.section-divider {
+  text-align: center;
+  margin: 3rem 0 2rem;
+  position: relative;
+}
+
+.section-divider span {
+  background: #f5f5dc;
+  padding: 0 2rem;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+  color: var(--ink-black);
+  position: relative;
+  z-index: 1;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--ink-black), transparent);
+  z-index: 0;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.article-card {
+  background: white;
+  border: 2px solid var(--ink-black);
+  border-radius: 4px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.article-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-color: #8a2be2;
+}
+
+.article-category {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #8a2be2;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  border-radius: 3px;
+  margin-bottom: 0.75rem;
+}
+
+.article-title {
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ink-black);
+  margin: 0.5rem 0;
+  line-height: 1.3;
+}
+
+.article-excerpt {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0.75rem 0;
+}
+
+.article-meta {
+  font-size: 0.8rem;
+  color: #888;
+  font-style: italic;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #eee;
+}
+
+/* ========================================
+   FOOTER SECTION
+   ======================================== */
+
+.prophet-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.about-content {
+  background: white;
+  border: 2px solid var(--ink-black);
+  border-radius: 4px;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.about-content h3 {
+  font-family: Georgia, serif;
+  font-size: 1.75rem;
+  color: var(--ink-black);
+  margin-bottom: 1rem;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.tech-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.tech-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #4a90e2, #357abd);
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.footer-tagline {
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  color: #888;
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .prophet-title {
+    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .masthead-ornament {
+    letter-spacing: 1rem;
+  }
+
+  .main-headline {
+    font-size: 2rem;
+  }
+
+  .headline-subtext {
+    font-size: 1.1rem;
+  }
+
+  .ministry-widget {
+    padding: 1.5rem;
+  }
+
+  .authenticated-header h3 {
+    font-size: 1.25rem;
+  }
+
+  .articles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ministry-button {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-page {
+    padding: 1rem 0.5rem;
+  }
+
+  .prophet-title {
+    font-size: 2rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .headline-section {
+    padding: 1rem;
+  }
+
+  .main-headline {
+    font-size: 1.5rem;
+  }
+}
